@@ -1,7 +1,6 @@
 package com.pinheiro.testespringsecurity.domain.product;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,6 +17,8 @@ import java.util.List;
 @Setter
 @EqualsAndHashCode(of = "id")
 public class User implements UserDetails {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     private String login;
     private String password;
