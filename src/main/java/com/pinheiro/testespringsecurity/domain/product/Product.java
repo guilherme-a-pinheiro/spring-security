@@ -1,11 +1,7 @@
 package com.pinheiro.testespringsecurity.domain.product;
 
-import com.pinheiro.testespringsecurity.dtos.ProductRequestDTO;
-import com.pinheiro.testespringsecurity.repositories.ProductRepository;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.UUID;
 
 @Entity(name = "product")
 @Table(name = "product")

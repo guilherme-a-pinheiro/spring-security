@@ -1,7 +1,7 @@
 package com.pinheiro.testespringsecurity.services;
 
 import com.pinheiro.testespringsecurity.domain.product.Product;
-import com.pinheiro.testespringsecurity.dtos.ProductRequestDTO;
+import com.pinheiro.testespringsecurity.domain.product.ProductRequestDTO;
 import com.pinheiro.testespringsecurity.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

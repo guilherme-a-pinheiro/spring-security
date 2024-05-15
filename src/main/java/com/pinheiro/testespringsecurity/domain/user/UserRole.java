@@ -1,4 +1,4 @@
-package com.pinheiro.testespringsecurity.domain.product;
+package com.pinheiro.testespringsecurity.domain.user;
 
 public enum UserRole {
     ADMIN("admin"),

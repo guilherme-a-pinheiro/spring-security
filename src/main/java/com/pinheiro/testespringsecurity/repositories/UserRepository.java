@@ -1,6 +1,6 @@
 package com.pinheiro.testespringsecurity.repositories;
 
-import com.pinheiro.testespringsecurity.domain.product.User;
+import com.pinheiro.testespringsecurity.domain.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 

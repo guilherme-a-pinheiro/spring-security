@@ -1,7 +1,7 @@
 package com.pinheiro.testespringsecurity.controllers;
 
 import com.pinheiro.testespringsecurity.domain.product.Product;
-import com.pinheiro.testespringsecurity.dtos.ProductRequestDTO;
+import com.pinheiro.testespringsecurity.domain.product.ProductRequestDTO;
 import com.pinheiro.testespringsecurity.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
