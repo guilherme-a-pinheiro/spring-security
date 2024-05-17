@@ -1,6 +1,7 @@
 package com.pinheiro.testespringsecurity.controllers;
 
 import com.pinheiro.testespringsecurity.domain.user.AuthenticationDTO;
+import com.pinheiro.testespringsecurity.domain.user.LoginResponseDTO;
 import com.pinheiro.testespringsecurity.domain.user.RegisterDTO;
 import com.pinheiro.testespringsecurity.domain.user.User;
 import com.pinheiro.testespringsecurity.infra.security.TokenService;
@@ -35,7 +36,7 @@ public class AuthenticatorController {
 
         var token = tokenService.generateToken((User)auth.getPrincipal());
 
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(new LoginResponseDTO(token));
     }
 
     @PostMapping("/register")
