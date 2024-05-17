@@ -3,6 +3,7 @@ package com.pinheiro.testespringsecurity.controllers;
 import com.pinheiro.testespringsecurity.domain.user.AuthenticationDTO;
 import com.pinheiro.testespringsecurity.domain.user.RegisterDTO;
 import com.pinheiro.testespringsecurity.domain.user.User;
+import com.pinheiro.testespringsecurity.infra.security.TokenService;
 import com.pinheiro.testespringsecurity.repositories.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +25,15 @@ public class AuthenticatorController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private TokenService tokenService;
+
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody @Valid AuthenticationDTO data){
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
+
+        var token = tokenService.generateToken((User)auth.getPrincipal());
 
         return ResponseEntity.ok().build();
     }
